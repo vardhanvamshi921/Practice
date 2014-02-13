@@ -1,6 +1,85 @@
+# Java class files
 *.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
+# App Engine specific
+war/WEB-INF/classes/
+war/WEB-INF/appengine-generated/
+
+# Eclipse
+.settings/
+
+#Android
+*.apk
+*.ap_
+*local.properties
+*.dex
+*.project
+*.classpath
+
+#Mac
+*.DS_Store
+**/*.xcodeproj/project.xcworkspace/**
+**/*.xcodeproj/xcuserdata/**
+**/*.xcuserdatad/**
+*.pyc
+
+#Windows
+VisualStudioPlugin/**
+VisualStudioPlugin/**VisualStudioPlugin/**
+
+#ignore thumbnails created by windows
+Thumbs.db
+
+#Ignore files build by Visual Studio
+**/app/**/packages
+*.obj
+*.pdb
+*.user
+*.aps
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+ClientBin
+*.lib
+*.sbr
+obj/
+*.csproj.user
+*.suo
+*.sdf
+*.opensdf
+Download/
+**/Bin/
+**/Bin/Debug/
+**/bin/
+**/Debug
+**/gen/
+
+#ClientBuilder
+**/temp
+**/logs
+
+#Open Mowbly
+**/mowbly.bundle
+Mowbly Client/android/FacebookSDK/bin/**
+Mowbly Client/android/app/third_party/google-play-services_lib/bin/**
+**/gen
+Mowbly Client/android/app/gen/**
+Mowbly Client/android/app/bin/**
+Mowbly Client/android/app/third_party/google-play-services_lib/gen/**
+marble/marble-js/juci-docs/**
+sjm/mowbly/media/clinic_admin/**
+marble/mowbly-commandline-tool/release/mowblycommandlinetoolv0.6/**
+Mowbly Client/android/FacebookSDK/gen/**
+Mowbly Client/android/facebook-3.5.2/bin/**
+Mowbly Client/android/facebook-3.5.2/gen/**
+Mowbly Client/blackberry/app/blackberry10/bin/**
+Mowbly Client/blackberry/app/blackberry10/gen/**
+Mowbly Client/blackberry/app/blackberry10/dist/**
