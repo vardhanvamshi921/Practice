@@ -11,7 +11,8 @@ public class User extends BasePojo {
 	public static String DATABASE = Parameters.SCHOOLDB;
 	
 	@Column
-	public String userid;
+	public String userid; // UniversityCode + Institutecode + BranchCode + Genereatedid(Auto increment) 
+	// Example 01B01U1234
 	@Column
 	public String username; 
 	@Column
@@ -32,7 +33,6 @@ public class User extends BasePojo {
 	public String institueid;
 	@Column
 	public String branchid;
-	
 	
 	public User(Map<String, Object> properties) {
 		super(TABLE, DATABASE);

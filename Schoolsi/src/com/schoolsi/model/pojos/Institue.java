@@ -17,7 +17,7 @@ public class Institue extends BasePojo{
 	public final static String POSTGRADUATE = "pg";
 	
 	public static String TABLE = "institues";
-	public static String DATABASE = Parameters.GOBALDB;
+	public static String DATABASE = Parameters.GLOBALDB;
 	
 	@Column
 	public String name;

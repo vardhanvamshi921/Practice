@@ -3,14 +3,14 @@
   <application></application>
   <version>1</version>
 
-  <!--
+   <!--
     Allows App Engine to send multiple requests to one instance in parallel:
   -->
   <threadsafe>true</threadsafe>
 
   <!-- Configure java.util.logging -->
   <system-properties>
-    <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+    <property name="java.util.logging.config.file" value="WEB-INF/classes/log4j.properties"/>
   </system-properties>
 
   <!--
@@ -27,5 +27,5 @@
     stale session data. For details, see
     http://code.google.com/appengine/docs/java/config/appconfig.html#Enabling_Sessions
   -->
-
+<sessions-enabled>true</sessions-enabled>
 </appengine-web-app>

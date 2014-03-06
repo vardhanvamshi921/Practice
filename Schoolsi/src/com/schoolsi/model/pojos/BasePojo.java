@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.basic.schoolsi.annotations.Column;
+import com.basic.schoolsi.util.Parameters;
 import com.server.framework.pojo.IPojo;
 
 public class BasePojo implements IPojo{
@@ -28,7 +29,27 @@ public class BasePojo implements IPojo{
 	}
 	
 	public void setProperties(Map<String, Object> properties) {
+		Long eid = getPropertyAsLong(properties ,Parameters.EID);
+		Long createdOn = getPropertyAsLong(properties ,Parameters.CREATEDON);
+		Long modifiedOn = getPropertyAsLong(properties ,Parameters.MODIFIEDON);
+		String createdBy = getPropertyAsString(properties ,Parameters.CREATEDBY);
+		String modifiedBy = getPropertyAsString(properties ,Parameters.MODIFIEDBY);
 		
+		if (eid != null && eid != 0) {
+			setId(eid);
+		}
+		if (createdOn != null) {
+			setCreatedOn(createdOn);
+		} 
+		if (createdBy != null) {
+			setCreatedBy(createdBy);
+		}
+		if (modifiedOn !=null) {
+			setModifiedOn(modifiedOn); 
+		}
+		if (modifiedBy != null) {
+			setModifiedBy(modifiedBy);
+		} 
 	}
 
 	protected static String getPropertyAsString(Map<String, Object> properties, String name) {
@@ -95,7 +116,7 @@ public class BasePojo implements IPojo{
 
 	@Override
 	public Long getId() {
-		return null;
+		return _eid;
 	}
 
 	@Override
@@ -110,7 +131,7 @@ public class BasePojo implements IPojo{
 
 	@Override
 	public String getTable() {
-		return null;
+		return this.TABLENAME;
 	}
 
 	@Override
@@ -151,6 +172,17 @@ public class BasePojo implements IPojo{
 	@Override
 	public void setTable(String table) {
 		
+	}
+
+	@Override
+	public void setId(long id) {
+		this._eid = id;
+		
+	}
+
+	@Override
+	public String getDatabase() {
+		return this.DATABASENAME;
 	}
 
 }

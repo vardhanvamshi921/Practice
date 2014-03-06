@@ -1,25 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-	<servlet>
-		<servlet-name>Schoolsi</servlet-name>
-		<servlet-class>com.basic.schoolsi.SchoolsiServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Schoolsi</servlet-name>
-		<url-pattern>/schoolsi</url-pattern>
-	</servlet-mapping>
+	
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
- <servlet>
-  <servlet-name>SystemServiceServlet</servlet-name>
-  <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
-  <init-param>
-   <param-name>services</param-name>
-   <param-value/>
-  </init-param>
- </servlet>
- <servlet-mapping>
-  <servlet-name>SystemServiceServlet</servlet-name>
-  <url-pattern>/_ah/spi/*</url-pattern>
- </servlet-mapping>
+	<servlet>
+	    <servlet-name>SystemServiceServlet</servlet-name>
+	    <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+		<init-param>
+   			<param-name>services</param-name>
+			<param-value/>
+  		</init-param>
+ 	</servlet>
+ 	<servlet-mapping>
+ 	    <servlet-name>SystemServiceServlet</servlet-name>
+ 	    <url-pattern>/_ah/spi/*</url-pattern>
+	</servlet-mapping>
+	<filter>
+        <filter-name>request_listener</filter-name>
+        <filter-class>com.basic.schoolsi.servlets.RequestListener</filter-class>
+    </filter>
+	
+    <filter-mapping>
+        <filter-name>request_listener</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+ 	
+ 	
+ 		 <servlet>
+		<servlet-name>Servlet</servlet-name>
+		<servlet-class>com.basic.schoolsi.servlets.Servlet</servlet-class>
+		<multipart-config>
+			<!-- 52MB max -->
+			<max-file-size>52428800</max-file-size>
+			<max-request-size>52428800</max-request-size>
+			<file-size-threshold>0</file-size-threshold>
+		</multipart-config>
+	 </servlet>
+	 
+ 		 
+ 		 
+	 <servlet-mapping>
+		<servlet-name>Servlet</servlet-name>
+		<url-pattern>/userservice</url-pattern>	
+	 </servlet-mapping>
 </web-app>
